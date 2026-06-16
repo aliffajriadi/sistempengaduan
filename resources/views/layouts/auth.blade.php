@@ -25,18 +25,25 @@
         }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg);
-            background-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
-                              radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
-                              radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
-            background-image: radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.05) 0%, transparent 40%),
-                              radial-gradient(circle at 90% 80%, rgba(14, 165, 233, 0.05) 0%, transparent 40%);
+            background-color: #0f172a;
             color: var(--text);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 1.5rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: -15px; left: -15px; right: -15px; bottom: -15px;
+            background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('/images/images.jpeg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(2px);
+            z-index: -1;
         }
         .auth-container {
             width: 100%; max-width: 440px;
@@ -52,8 +59,8 @@
             font-size: 1.75rem; color: #fff; margin-bottom: 1rem;
             box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.4);
         }
-        .auth-logo h1 { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.025em; color: var(--primary); }
-        .auth-logo p { color: var(--text-muted); font-size: 0.9375rem; margin-top: 0.25rem; font-weight: 500; }
+        .auth-logo h1 { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.025em; color: #ffffff; }
+        .auth-logo p { color: #cbd5e1; font-size: 0.9375rem; margin-top: 0.25rem; font-weight: 500; }
         
         .auth-card {
             background: #ffffff;
@@ -116,7 +123,7 @@
         <div class="auth-logo">
             <div class="logo-icon"><i class="fas fa-shield-halved"></i></div>
             <h1>SISPEM</h1>
-            <p>Sistem Pengaduan Masyarakat</p>
+            <p>Sistem Pengaduan Masyarakat Kelurahan Sungai Lekop</p>
         </div>
         @if(session('success'))
             <div class="alert alert-success"><i class="fas fa-check-circle"></i> {{ session('success') }}</div>

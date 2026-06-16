@@ -17,7 +17,7 @@ Route::get('/', function () {
             ? redirect()->route('rt.dashboard')
             : redirect()->route('masyarakat.dashboard');
     }
-    return redirect()->route('login');
+    return view('landing');
 });
 
 // Guest routes
